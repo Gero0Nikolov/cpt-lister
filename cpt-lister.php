@@ -23,7 +23,7 @@ class cpt_lister {
 				'show_post_content' => 1,
 				'cptl_title_link_class' => 'cptl_title_link',
 				'cptl_title_class' => 'cptl_title',
-				'cptl_content_class' => 'cptl_class'
+				'cptl_content_class' => 'cptl_content'
 				), $atts 
 			)
 		);
