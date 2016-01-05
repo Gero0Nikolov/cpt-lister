@@ -3,7 +3,7 @@
 Plugin Name: Custom Post Type Lister - CPT Lister
 Description: This amazing plugin gives you the possibility to list posts from Custom Post Type. :)
 Version: 1.0
-Author: GeroN.
+Author: GeroNikolov
 Author URI: http://blogy.co?GeroNikolov
 License: GPLv2
 */
