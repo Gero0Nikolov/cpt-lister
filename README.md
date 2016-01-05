@@ -7,7 +7,7 @@
 </p>
 <p>
 	I am the author and my name is <strong>Gero Nikolov</strong>.
-	My official website is <a href='http://blogy.co' target='_blank'>Blogy</a>, which is <strong>social media</strong> for <strong>Bloggers</strong>.
+	My official website is <a href='http://blogy.co' target='_blank'>Blogy</a>, which is <strong>social media</strong> for <strong>Bloggers</strong>.<br>
 	But I am also a <strong>WordPress</strong> engineer at <a href='http://devrix.com' target='_blank'>DevriX</a>.
 
 	Check my blog <a href='http://blogy.co?GeroNikolov' target='_blank'>here</a>.
