@@ -42,7 +42,7 @@ class cpt_lister {
 			$args = array(
 			  'post_type' => $type,
 			  'post_status' => $post_status,
-			  'order_by' => $order_by,
+			  'orderby' => $order_by,
 			  'order' => $order,
 			  'posts_per_page' => $posts_per_page
 			  );
