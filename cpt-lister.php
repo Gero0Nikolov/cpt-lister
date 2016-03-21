@@ -23,7 +23,8 @@ class cpt_lister {
 				'show_post_content' => 1,
 				'cptl_title_link_class' => 'cptl_title_link',
 				'cptl_title_class' => 'cptl_title',
-				'cptl_content_class' => 'cptl_content'
+				'cptl_content_class' => 'cptl_content',
+				'cptl_content_wrapper' => 'cptl_wrapper'
 				), $atts 
 			)
 		);
@@ -44,20 +45,23 @@ class cpt_lister {
 			$listing_query = new WP_Query( $args );
 			if ( $listing_query->have_posts() ) {
 				while ( $listing_query->have_posts() ) : $listing_query->the_post(); ?>
-			    
+
+				<h1 class="<?php echo $cptl_title_class ?>">
+
 			    <?php // Posts TITLES //
-			    if ( $titles_as_links == 1 ) : 
+			    if ( $titles_as_links == 1 ) :
 			    ?>
 
-			    <a href="<?php the_permalink() ?>" class="<?php echo $cptl_title_link_class; ?>" >
-			    	<h1 class="<?php echo $cptl_title_class ?>"><?php the_title(); ?></h1>
-			    </a>
+		        <a href="<?php the_permalink() ?>" class="<?php echo $cptl_title_link_class; ?>" >
+		    	    <?php the_title(); ?>
+		        </a>
 
 			    <?php else : ?>
 
-			    <h1 class="<?php echo $cptl_title_class ?>"><?php the_title(); ?></h1>
+				<?php the_title(); ?>
 
 			    <?php endif; ?>
+			    </h1>
 
 			    <?php // Posts CONTENT //
 			    if ( $show_post_content == 1 ) :
