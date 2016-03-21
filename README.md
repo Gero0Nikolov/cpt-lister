@@ -31,4 +31,7 @@
 	<li>cptl_title_link_class - This is used to tell the shortcode what class should be added to the Link Wrapper of the post title. By default it is <strong>cptl_title_link</strong></li>
 	<li>cptl_title_class - This tells the shortcode what class should be added to the Title Wrapper of the post title. By default it is <strong>cptl_title</strong></li>
 	<li>cptl_content_class - This is used to tell the shortcode what calss should be added to the Content Wrapper of the post content. By default it is <strong>cptl_content</strong></li>
+	<li>
+	cptl_content_wrapper - This is used to tell the shortcode how wrap the listed results. It can be <strong>'h1', 'h2', 'h3', 'h4', 'h4', 'h6', 'li', 'span', 'div'</strong>
+	</li>
 </ol>
