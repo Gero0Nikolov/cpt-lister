@@ -11,6 +11,8 @@ License: GPLv2
 class cpt_lister {
 	public function cpt_list_this( $atts, $content = "" ) {
 
+		$valid_wrappers = array('h1','h2','h3','h4','h4','h6','li','span','div');
+
 		extract( 
 			shortcode_atts( 
 				array( 
@@ -24,7 +26,7 @@ class cpt_lister {
 				'cptl_title_link_class' => 'cptl_title_link',
 				'cptl_title_class' => 'cptl_title',
 				'cptl_content_class' => 'cptl_content',
-				'cptl_content_wrapper' => 'cptl_wrapper'
+				'cptl_content_wrapper' => 'h1'
 				), $atts 
 			)
 		);
@@ -32,6 +34,10 @@ class cpt_lister {
 		if ( strpos( $post_status, "," ) ) { $post_status = explode(",", $post_status); }
 
 		if ( !empty( $type ) ) {
+
+			if ( empty( $cptl_content_wrapper ) || !in_array($cptl_content_wrapper, $valid_wrappers) ) {
+				$cptl_content_wrapper = 'h1';
+			}
 
 			$args = array(
 			  'post_type' => $type,
@@ -44,9 +50,12 @@ class cpt_lister {
 			$listing_query = null;
 			$listing_query = new WP_Query( $args );
 			if ( $listing_query->have_posts() ) {
+				if ($cptl_content_wrapper === 'li') {
+					echo "<ul>";
+				}
 				while ( $listing_query->have_posts() ) : $listing_query->the_post(); ?>
 
-				<h1 class="<?php echo $cptl_title_class ?>">
+				<<?php echo $cptl_content_wrapper ?> class="<?php echo $cptl_title_class ?>">
 
 			    <?php // Posts TITLES //
 			    if ( $titles_as_links == 1 ) :
@@ -61,7 +70,7 @@ class cpt_lister {
 				<?php the_title(); ?>
 
 			    <?php endif; ?>
-			    </h1>
+			    </<?php echo $cptl_content_wrapper ?>>
 
 			    <?php // Posts CONTENT //
 			    if ( $show_post_content == 1 ) :
@@ -73,6 +82,10 @@ class cpt_lister {
 
 		    	<?php
 			 	endwhile;
+
+			 	if ($cptl_content_wrapper === 'li') {
+					echo "</ul>";
+				}
 			}
 			wp_reset_query();
 
