@@ -31,11 +31,11 @@ class cpt_lister {
 			)
 		);
 
-		if ( strpos( $post_status, "," ) ) { $post_status = explode(",", $post_status); }
+		if ( strpos( $post_status, "," ) ) { $post_status = explode( ",", $post_status ); }
 
 		if ( !empty( $type ) ) {
 
-			if ( empty( $cptl_content_wrapper ) || !in_array($cptl_content_wrapper, $valid_wrappers) ) {
+			if ( empty( $cptl_content_wrapper ) || !in_array( $cptl_content_wrapper, $valid_wrappers ) ) {
 				$cptl_content_wrapper = 'h1';
 			}
 
