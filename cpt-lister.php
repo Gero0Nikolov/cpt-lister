@@ -11,6 +11,8 @@ License: GPLv2
 class cpt_lister {
 	public function cpt_list_this( $atts, $content = "" ) {
 
+		ob_start();
+
 		$valid_wrappers = array('h1','h2','h3','h4','h4','h6','li','span','div');
 
 		extract( 
@@ -91,9 +93,11 @@ class cpt_lister {
 
 		} else {
 
-			die( "<h1 style='display: block; text-align: left; font-weight: bold; font-size: 3.5rem;'>Choose your post type!</h1>" );
+			echo "<h1 style='display: block; text-align: left; font-weight: bold; font-size: 3.5rem;'>Choose your post type!</h1>";
 
 		}
+
+		return ob_get_clean();
 
 	}
 }
